@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#182b29">
+  <title>بين الله والإنسان | رحلة نحو الفهم</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #182b29;
+      --green-light: #29443b;
+      --gold: #d7b77a;
+      --cream: #f5f0e6;
+      --white: #fffdf8;
+      --text: #303b35;
+      --muted: #77786e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      border-bottom: 1px solid #ffffff20;
+    }
+
+    nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-family: 'Amiri', serif;
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 15% 50%, #355348 0%, transparent 45%),
+        var(--green);
+      color: var(--white);
+      padding: 85px 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: #e3e5dc;
+      max-width: 530px;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      padding: 12px 28px;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #ead2a1;
+    }
+
+    .book-frame {
+      max-width: 355px;
+      margin: auto;
+      padding: 12px;
+      border: 1px solid #d7b77a75;
+      border-radius: 5px;
+      transform: rotate(-2deg);
+    }
+
+    .book-cover {
+      min-height: 420px;
+      background: linear-gradient(145deg, #29443b, #101d1c);
+      border: 1px solid #d7b77a90;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 15px 20px 40px #0005;
+    }
+
+    .cover-small {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+    }
+
+    .cover-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(34px, 4vw, 47px);
+      color: #f8edda;
+      line-height: 1.6;
+    }
+
+    .cover-line {
+      width: 65px;
+      height: 1px;
+      background: var(--gold);
+      margin: 25px 0;
+    }
+
+    .cover-subtitle {
+      color: #e0c994;
+      font-size: 13px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading span {
+      color: #987644;
+      font-size: 13px;
+    }
+
+    h2 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(30px, 4vw, 43px);
+      color: var(--green);
+      line-height: 1.5;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .about p {
+      font-size: 17px;
+      color: #64665d;
+    }
+
+    .features {
+      background: var(--white);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid #e4dac8;
+      padding: 28px;
+      border-radius: 7px;
+    }
+
+    .card-number {
+      color: #a4824c;
+      font-size: 13px;
+    }
+
+    .card h3 {
+      color: var(--green);
+      margin: 10px 0;
+      font-family: 'Amiri', serif;
+      font-size: 25px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote-section {
+      background: var(--green-light);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .quote-section h2 {
+      color: var(--gold);
+    }
+
+    .quote {
+      max-width: 780px;
+      margin: 22px auto;
+      font-family: 'Amiri', serif;
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.9;
+    }
+
+    .quote-note {
+      color: #d3d8ce;
+      font-size: 12px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      background: #101d1c;
+      color: #c8cfc5;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-inline: auto;
+      }
+
+      .book-frame {
+        width: 85%;
+        max-width: 310px;
+      }
+
+      .book-cover {
+        min-height: 360px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 400px) {
+      nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">بين الله والإنسان</a>
+
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن الكتاب</a>
+        <a href="#chapters">الموضوعات</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <div class="eyebrow">كتاب يستحق أن تتوقف معه</div>
+
+          <h1>بين الله<br>والإنسان</h1>
+
+          <p>
+            رحلة في أسئلة الإنسان، وفي الخوف والرحمة،
+            والذنب والتوبة، والشك واليقين.
+            محاولة للفهم، ومساحة للتأمل، وبحث عن المعنى.
+          </p>
+
+          <a class="button" href="reader.html">اقرأ الكتاب الأن</a>
+          <a class="button" href="#about"
+          style="margin-right: 10px; background: transparent; color:#d7b77a; border: 1px solid #d7b77a;">
+            اكتشف حكاية الكتاب
+          </a> 
+        </div>
+
+        <div class="book-frame">
+          <div class="book-cover">
+            <div class="cover-small">رحلة في أعماق الإنسان</div>
+            <div class="cover-title">بين الله<br>والإنسان</div>
+            <div class="cover-line"></div>
+            <div class="cover-subtitle">
+              أسئلة نعيشها… ونبحث عن معناها
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span>حكاية الكتاب</span>
+          <h2>مش كل سؤال معناه بُعد</h2>
+        </div>
+
+        <div class="about">
+          <p>
+            «بين الله والإنسان» مساحة للتفكير في العلاقة
+            بين الإنسان وربه، وفي أثر الخوف والرحمة
+            والتجارب التي نمر بها على فهمنا للحياة والإيمان.
+            لا يقدم نفسه باعتباره نهاية الطريق،
+            بل دعوة إلى التأمل والبحث الصادق عن المعنى.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="chapters">
+      <div class="container">
+        <div class="section-heading">
+          <span>محطات من الرحلة</span>
+          <h2>أسئلة تمس حياتنا</h2>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="card-number">01 — البداية</div>
+            <h3>الإنسان الذي يبحث عن الله</h3>
+            <p>
+              عن الأسئلة الأولى، ورحلة البحث عن الفهم
+              والمعنى في حياتنا.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02 — التأمل</div>
+            <h3>بين الخوف والرحمة</h3>
+            <p>
+              تأمل في الطريقة التي نفهم بها الخوف،
+              والرجاء، والرحمة.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03 — الرحلة</div>
+            <h3>الشك واليقين</h3>
+            <p>
+              عن الأسئلة التي تصاحب الإنسان،
+              ومحاولاته المستمرة للوصول إلى الفهم.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container">
+        <div class="section-heading">
+          <span>مساحة للتأمل</span>
+          <h2>ربما تبدأ الرحلة بسؤال</h2>
+        </div>
+
+        <div class="quote">
+          أحيانًا لا نحتاج إلى إجابة جديدة بقدر
+          ما نحتاج إلى أن ننظر إلى أسئلتنا بصدق.
+        </div>
+
+        <div class="quote-note">
+          نص تجريبي للموقع، يمكن استبداله باقتباس حرفي من الكتاب.
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span>تابع الرحلة</span>
+          <h2>بين الله والإنسان</h2>
+        </div>
+
+        <p style="margin-bottom: 25px;">
+          لكل رحلة سؤال… ولكل إنسان حكاية.
+        </p>
+
+        <!-- أضف رابط القراءة أو التواصل الحقيقي هنا -->
+        <a class="button" href="mailto:">
+          تواصل معنا
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>بين الله والإنسان — جميع الحقوق محفوظة © 2026</p>
+  </footer>
+
+</body>
+</html>
