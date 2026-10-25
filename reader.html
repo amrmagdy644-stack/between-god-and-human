@@ -1,314 +1,395 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بين الله والإنسان | رحلة إلى المعنى</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#182b29">
+  <title>اقرأ الكتاب | بين الله والإنسان</title>
 
-<style>
-:root {
-    --green: #102b24;
-    --green-light: #1a4034;
-    --gold: #d6b66e;
-    --cream: #f5f0e5;
-    --muted: #c4c9bd;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-* {
-    box-sizing: border-box;
-}
+  <style>
+    :root {
+      --green: #182b29;
+      --green-light: #29443b;
+      --gold: #d7b77a;
+      --cream: #f0eadc;
+      --white: #fffdf8;
+      --text: #303b35;
+      --muted: #77786e;
+    }
 
-body {
-    margin: 0;
-    font-family: Tahoma, Arial, sans-serif;
-    background: var(--green);
-    color: var(--cream);
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 7%;
-    border-bottom: 1px solid #ffffff18;
-}
+    body {
+      font-family: 'Cairo', Tahoma, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-.logo {
-    color: var(--gold);
-    font-size: 20px;
-    font-weight: bold;
-}
+    a { color: inherit; text-decoration: none; }
 
-header a {
-    color: var(--cream);
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 14px;
-}
-
-.hero {
-    min-height: 590px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-    padding: 65px 8%;
-    background:
-        radial-gradient(ellipse at 20% 50%, #31534255, transparent 60%);
-}
-
-.cover {
-    width: 280px;
-    min-width: 220px;
-    aspect-ratio: 2 / 3;
-    background: #183a2d;
-    border: 1px solid var(--gold);
-    box-shadow: 15px 20px 45px #0006;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.cover-placeholder {
-    padding: 25px;
-    text-align: center;
-    color: var(--gold);
-}
-
-.cover-placeholder .ornament {
-    font-size: 35px;
-    margin-bottom: 30px;
-}
-
-.cover-placeholder h2 {
-    font-size: 29px;
-    line-height: 1.8;
-}
-
-.cover-placeholder p {
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.intro {
-    max-width: 490px;
-}
-
-.eyebrow {
-    color: var(--gold);
-    letter-spacing: 2px;
-    font-size: 13px;
-}
-
-.intro h1 {
-    font-size: clamp(34px, 5vw, 56px);
-    line-height: 1.6;
-    margin: 18px 0;
-}
-
-.intro h1 span {
-    color: var(--gold);
-}
-
-.intro p {
-    color: var(--muted);
-    font-size: 17px;
-    line-height: 2.1;
-}
-
-.actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-}
-
-.btn {
-    padding: 14px 24px;
-    border-radius: 4px;
-    font-size: 15px;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid var(--gold);
-}
-
-.btn-primary {
-    background: var(--gold);
-    color: #17291f;
-    font-weight: bold;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--cream);
-}
-
-.quote {
-    padding: 40px 20px;
-    text-align: center;
-    background: #0c211c;
-}
-
-.quote p {
-    color: var(--gold);
-    font-size: 20px;
-    line-height: 2;
-}
-
-.quote small {
-    color: var(--muted);
-}
-
-.reader {
-    display: none;
-    padding: 35px 7%;
-    background: #f0eadc;
-    color: #26392d;
-}
-
-.reader:target {
-    display: block;
-}
-
-.reader h2 {
-    text-align: center;
-    color: #183a2d;
-}
-
-.reader iframe {
-    display: block;
-    width: 100%;
-    height: 75vh;
-    border: 1px solid #d6b66e;
-    background: white;
-    margin-top: 25px;
-}
-
-footer {
-    text-align: center;
-    padding: 25px 15px;
-    color: var(--muted);
-    font-size: 13px;
-    border-top: 1px solid #ffffff18;
-}
-
-footer span {
-    color: var(--gold);
-}
-
-@media (max-width: 700px) {
+    /* ===== الهيدر ===== */
     header {
-        padding: 18px 5%;
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .logo {
+      color: var(--gold);
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    header nav { display: flex; gap: 18px; font-size: 14px; }
+    header nav a:hover { color: var(--gold); }
+
+    /* ===== عنوان الصفحة ===== */
+    .title {
+      text-align: center;
+      padding: 26px 16px 10px;
+    }
+    .title h1 {
+      font-family: 'Amiri', serif;
+      color: var(--green);
+      font-size: clamp(24px, 5vw, 36px);
+      line-height: 1.5;
     }
 
-    header a {
-        margin-right: 10px;
-        font-size: 12px;
+    /* ===== شريط التحكم ===== */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--green);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 12px;
+      box-shadow: 0 3px 12px #0003;
+    }
+    .toolbar button,
+    .toolbar .dl {
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      border-radius: 6px;
+      padding: 8px 16px;
+      cursor: pointer;
+      min-height: 42px;
+      touch-action: manipulation;
+    }
+    .toolbar button.main {
+      background: var(--gold);
+      color: var(--green);
+    }
+    .toolbar button:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+    .page-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .page-box input {
+      width: 62px;
+      font-family: inherit;
+      font-size: 15px;
+      text-align: center;
+      padding: 6px 4px;
+      border-radius: 6px;
+      border: 1px solid var(--gold);
+      background: var(--white);
+      color: var(--green);
+    }
+    .zoom { display: flex; gap: 6px; }
+    .zoom button { padding: 8px 12px; min-width: 42px; }
+
+    /* ===== منطقة الكتاب ===== */
+    .stage {
+      flex: 1;
+      width: min(900px, 100%);
+      margin: 18px auto 10px;
+      padding: 0 12px;
+      overflow-x: auto;
+    }
+    .page-wrap {
+      position: relative;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid var(--gold);
+      box-shadow: 0 8px 28px #0002;
+      min-height: 300px;
+    }
+    #pdfCanvas {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .status {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      background: #fffdf8e6;
+      font-size: 15px;
+    }
+    .status[hidden] { display: none; }
+    .spinner {
+      width: 38px; height: 38px;
+      border: 3px solid #e4dac8;
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin .9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .status a {
+      color: var(--green);
+      font-weight: 700;
+      border-bottom: 1px solid var(--gold);
     }
 
-    .hero {
-        flex-direction: column;
-        gap: 38px;
-        padding: 45px 7%;
-        text-align: center;
+    .hint {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 6px 16px 22px;
     }
 
-    .cover {
-        width: 220px;
+    footer {
+      background: #101d1c;
+      color: #c8cfc5;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 13px;
     }
+    footer span { color: var(--gold); }
 
-    .actions {
-        justify-content: center;
+    @media (max-width: 600px) {
+      header { padding: 12px 16px; }
+      .logo { font-size: 20px; }
+      header nav { gap: 12px; font-size: 13px; }
+      .title { padding: 18px 16px 6px; }
+      .toolbar { gap: 6px; padding: 8px; }
+      .toolbar button { padding: 8px 12px; font-size: 14px; }
+      .stage { padding: 0 8px; margin-top: 12px; }
+      .zoom, .toolbar .dl { display: none; } /* على الموبايل الزووم بالأصابع */
     }
-
-    .intro p {
-        font-size: 15px;
-    }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">بين الله والإنسان</div>
+  <header>
+    <a class="logo" href="index.html">بين الله والإنسان</a>
     <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#reader">اقرأ الكتاب</a>
+      <a href="index.html">الرئيسية</a>
+      <a href="book.pdf" download>تحميل PDF</a>
     </nav>
-</header>
+  </header>
 
-<main id="home">
-    <section class="hero">
+  <div class="title">
+    <h1>بين الله والإنسان — القراءة الإلكترونية</h1>
+  </div>
 
-        <div class="cover">
-            <img src="image/cover.jpg"
-                 alt="غلاف كتاب بين الله والإنسان"
-                 onerror="this.style.display='none'">
-            <div class="cover-placeholder">
-                <div class="ornament">✦</div>
-                <h2>بين الله<br>والإنسان</h2>
-                <p>رحلة في البحث عن المعنى</p>
-            </div>
-        </div>
+  <!-- شريط التنقل: في الصفحات العربي "السابق" على اليمين و"التالي" على الشمال -->
+  <div class="toolbar">
+    <button id="prevBtn" disabled>→ السابق</button>
 
-        <div class="intro">
-            <div class="eyebrow">كتاب يستحق أن تتوقف عنده</div>
+    <div class="page-box">
+      صفحة
+      <input id="pageInput" type="number" min="1" value="1" inputmode="numeric" aria-label="رقم الصفحة">
+      من <span id="pageCount">…</span>
+    </div>
 
-            <h1>
-                بين السؤال<br>
-                <span>والطمأنينة</span>
-            </h1>
+    <button id="nextBtn" class="main" disabled>التالي ←</button>
 
-            <p>
-                رحلة فكرية وإنسانية في علاقتنا بالله،
-                بين الخوف والرحمة، والذنب والتوبة،
-                والشك واليقين.
-            </p>
+    <div class="zoom">
+      <button id="zoomOut" title="تصغير">−</button>
+      <button id="zoomIn" title="تكبير">+</button>
+    </div>
+  </div>
 
-            <div class="actions">
-                <a class="btn btn-primary" href="#reader">
-                    ابدأ القراءة ←
-                </a>
+  <main class="stage" id="stage">
+    <div class="page-wrap" id="pageWrap">
+      <canvas id="pdfCanvas"></canvas>
+      <div class="status" id="status">
+        <div class="spinner"></div>
+        <div>جاري تحميل الكتاب…</div>
+      </div>
+    </div>
+  </main>
 
-                <a class="btn btn-secondary" href="book.pdf" target="_blank">
-                    فتح نسخة PDF
-                </a>
-            </div>
-        </div>
+  <p class="hint">للتنقل: الأزرار، أو اسحب الصفحة يمين/شمال على الموبايل، أو أسهم الكيبورد على الكمبيوتر.</p>
 
-    </section>
-
-    <section class="quote">
-        <p>«أحيانًا لا نحتاج إلى إجابات أكثر، بل إلى أن نفهم السؤال من جديد.»</p>
-        <small>بين الله والإنسان</small>
-    </section>
-
-    <section class="reader" id="reader">
-        <h2>بين الله والإنسان — القراءة الإلكترونية</h2>
-        <iframe src="book.pdf#toolbar=1&navpanes=0&view=fith" title="قراءة كتاب بين الله والإنسان"
-        loading="eager"
-        allowfullscreen></iframe>
-        <p style="text-align: center; margin-top: 20px;">
-            <a href="./book.pdf" target="_blank" rel="noopener" style="color:#183a2d;">
-                لو الكتاب لم يظهر،اضغط هنا لفتح نسخة pdf
-            </a>">
-                تحميل نسخة PDF
-            </a>
-    </section>
-</main>
-
-<footer>
+  <footer>
     <span>بين الله والإنسان</span>
     <p>رحلة لاكتشاف المعنى، وفهم الإنسان، وإعادة النظر في الأسئلة.</p>
-</footer>
+  </footer>
 
+  <!-- PDF.js: بيرسم صفحات الكتاب بنفسه، فيشتغل على كل الموبايلات -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+  (function () {
+    var PDF_URL   = 'book.pdf';
+    var CDN       = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+    var STORE_KEY = 'bgh-last-page';
+
+    var canvas   = document.getElementById('pdfCanvas');
+    var ctx      = canvas.getContext('2d');
+    var wrap     = document.getElementById('pageWrap');
+    var stage    = document.getElementById('stage');
+    var statusEl = document.getElementById('status');
+    var prevBtn  = document.getElementById('prevBtn');
+    var nextBtn  = document.getElementById('nextBtn');
+    var input    = document.getElementById('pageInput');
+    var countEl  = document.getElementById('pageCount');
+
+    var pdf = null, pageNum = 1, zoom = 1;
+    var renderTask = null, pending = null;
+
+    function showError() {
+      statusEl.hidden = false;
+      statusEl.innerHTML =
+        '<div>تعذّر عرض الكتاب داخل الصفحة.</div>' +
+        '<a href="' + PDF_URL + '" target="_blank" rel="noopener">اضغط هنا لفتح نسخة PDF</a>';
+    }
+
+    if (!window.pdfjsLib) { showError(); return; }
+    pdfjsLib.GlobalWorkerOptions.workerSrc = CDN + 'pdf.worker.min.js';
+
+    // نحفظ آخر صفحة وصلها القارئ (لو المتصفح يسمح)
+    function savePage(n) { try { localStorage.setItem(STORE_KEY, n); } catch (e) {} }
+    function loadPage() {
+      try { return parseInt(localStorage.getItem(STORE_KEY), 10) || 1; } catch (e) { return 1; }
+    }
+
+    function render(num) {
+      // لو فيه رسم شغال، نلغيه ونرسم الصفحة الجديدة
+      if (renderTask) { pending = num; renderTask.cancel(); return; }
+
+      pdf.getPage(num).then(function (page) {
+        var base   = page.getViewport({ scale: 1 });
+        var avail  = stage.clientWidth - 2;                 // عرض المساحة المتاحة
+        var cssW   = Math.min(avail, 820) * zoom;            // عرض الصفحة على الشاشة
+        var scale  = cssW / base.width;
+        var dpr    = Math.min(window.devicePixelRatio || 1, 3); // وضوح على شاشات الموبايل
+        var vp     = page.getViewport({ scale: scale * dpr });
+
+        canvas.width  = Math.floor(vp.width);
+        canvas.height = Math.floor(vp.height);
+        wrap.style.width = Math.floor(cssW) + 'px';
+
+        renderTask = page.render({ canvasContext: ctx, viewport: vp });
+        return renderTask.promise;
+      }).then(function () {
+        renderTask = null;
+        statusEl.hidden = true;
+        if (pending !== null) { var p = pending; pending = null; render(p); }
+      }).catch(function (err) {
+        renderTask = null;
+        if (err && err.name === 'RenderingCancelledException') {
+          if (pending !== null) { var p = pending; pending = null; render(p); }
+        } else { console.error(err); showError(); }
+      });
+
+      updateUI();
+    }
+
+    function updateUI() {
+      input.value = pageNum;
+      prevBtn.disabled = pageNum <= 1;
+      nextBtn.disabled = pageNum >= pdf.numPages;
+    }
+
+    function goTo(n) {
+      n = Math.max(1, Math.min(pdf.numPages, n | 0));
+      if (n === pageNum && canvas.width) return;
+      pageNum = n;
+      savePage(n);
+      render(n);
+      // نرجع لأول الصفحة لو القارئ كان نازل تحت
+      var top = wrap.getBoundingClientRect().top + window.scrollY - 70;
+      if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    prevBtn.onclick = function () { goTo(pageNum - 1); };
+    nextBtn.onclick = function () { goTo(pageNum + 1); };
+    input.onchange  = function () { goTo(parseInt(input.value, 10) || 1); };
+    input.onkeydown = function (e) { if (e.key === 'Enter') input.blur(); };
+
+    document.getElementById('zoomIn').onclick  = function () { zoom = Math.min(zoom + .25, 3); render(pageNum); };
+    document.getElementById('zoomOut').onclick = function () { zoom = Math.max(zoom - .25, .5); render(pageNum); };
+
+    // أسهم الكيبورد (اتجاه عربي: الشمال = التالي)
+    document.addEventListener('keydown', function (e) {
+      if (!pdf || e.target === input) return;
+      if (e.key === 'ArrowLeft')  goTo(pageNum + 1);
+      if (e.key === 'ArrowRight') goTo(pageNum - 1);
+    });
+
+    // السحب بالصباع على الموبايل (زي تقليب كتاب عربي)
+    var sx = 0, sy = 0, multi = false;
+    wrap.addEventListener('touchstart', function (e) {
+      multi = e.touches.length > 1;
+      sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+    }, { passive: true });
+    wrap.addEventListener('touchend', function (e) {
+      if (multi || !pdf) return;
+      // لو القارئ عامل زووم بالأصابع، منقلبش الصفحة
+      if (window.visualViewport && window.visualViewport.scale > 1.05) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      var dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        goTo(dx > 0 ? pageNum + 1 : pageNum - 1);   // سحب لليمين = التالي
+      }
+    }, { passive: true });
+
+    // لما الشاشة تلف أو يتغير حجمها نعيد الرسم
+    var rt;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { if (pdf) render(pageNum); }, 200);
+    });
+
+    pdfjsLib.getDocument({
+      url: PDF_URL,
+      cMapUrl: CDN + 'cmaps/',
+      cMapPacked: true,
+      disableFontFace: true,   // يرسم الحروف العربي كأشكال فتظهر مظبوطة على كل الأجهزة
+      standardFontDataUrl: CDN + 'standard_fonts/'
+    }).promise.then(function (doc) {
+      pdf = doc;
+      countEl.textContent = pdf.numPages;
+      input.max = pdf.numPages;
+      pageNum = Math.min(loadPage(), pdf.numPages);
+      render(pageNum);
+    }).catch(function (err) { console.error(err); showError(); });
+  })();
+  </script>
 </body>
 </html>
