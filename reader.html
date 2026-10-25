@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بين الله والإنسان | رحلة إلى المعنى</title>
+
+<style>
+:root {
+    --green: #102b24;
+    --green-light: #1a4034;
+    --gold: #d6b66e;
+    --cream: #f5f0e5;
+    --muted: #c4c9bd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: var(--green);
+    color: var(--cream);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    border-bottom: 1px solid #ffffff18;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header a {
+    color: var(--cream);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 65px 8%;
+    background:
+        radial-gradient(ellipse at 20% 50%, #31534255, transparent 60%);
+}
+
+.cover {
+    width: 280px;
+    min-width: 220px;
+    aspect-ratio: 2 / 3;
+    background: #183a2d;
+    border: 1px solid var(--gold);
+    box-shadow: 15px 20px 45px #0006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-placeholder {
+    padding: 25px;
+    text-align: center;
+    color: var(--gold);
+}
+
+.cover-placeholder .ornament {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.cover-placeholder h2 {
+    font-size: 29px;
+    line-height: 1.8;
+}
+
+.cover-placeholder p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.intro {
+    max-width: 490px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.intro h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.6;
+    margin: 18px 0;
+}
+
+.intro h1 span {
+    color: var(--gold);
+}
+
+.intro p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 2.1;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--gold);
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #17291f;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--cream);
+}
+
+.quote {
+    padding: 40px 20px;
+    text-align: center;
+    background: #0c211c;
+}
+
+.quote p {
+    color: var(--gold);
+    font-size: 20px;
+    line-height: 2;
+}
+
+.quote small {
+    color: var(--muted);
+}
+
+.reader {
+    display: none;
+    padding: 35px 7%;
+    background: #f0eadc;
+    color: #26392d;
+}
+
+.reader:target {
+    display: block;
+}
+
+.reader h2 {
+    text-align: center;
+    color: #183a2d;
+}
+
+.reader iframe {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    border: 1px solid #d6b66e;
+    background: white;
+    margin-top: 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid #ffffff18;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    header a {
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 38px;
+        padding: 45px 7%;
+        text-align: center;
+    }
+
+    .cover {
+        width: 220px;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">بين الله والإنسان</div>
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#reader">اقرأ الكتاب</a>
+    </nav>
+</header>
+
+<main id="home">
+    <section class="hero">
+
+        <div class="cover">
+            <img src="image/cover.jpg"
+                 alt="غلاف كتاب بين الله والإنسان"
+                 onerror="this.style.display='none'">
+            <div class="cover-placeholder">
+                <div class="ornament">✦</div>
+                <h2>بين الله<br>والإنسان</h2>
+                <p>رحلة في البحث عن المعنى</p>
+            </div>
+        </div>
+
+        <div class="intro">
+            <div class="eyebrow">كتاب يستحق أن تتوقف عنده</div>
+
+            <h1>
+                بين السؤال<br>
+                <span>والطمأنينة</span>
+            </h1>
+
+            <p>
+                رحلة فكرية وإنسانية في علاقتنا بالله،
+                بين الخوف والرحمة، والذنب والتوبة،
+                والشك واليقين.
+            </p>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="#reader">
+                    ابدأ القراءة ←
+                </a>
+
+                <a class="btn btn-secondary" href="book.pdf" target="_blank">
+                    فتح نسخة PDF
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="quote">
+        <p>«أحيانًا لا نحتاج إلى إجابات أكثر، بل إلى أن نفهم السؤال من جديد.»</p>
+        <small>بين الله والإنسان</small>
+    </section>
+
+    <section class="reader" id="reader">
+        <h2>بين الله والإنسان — القراءة الإلكترونية</h2>
+        <iframe src="book.pdf#toolbar=1&navpanes=0&view=fith" title="قراءة كتاب بين الله والإنسان"
+        loading="eager"
+        allowfullscreen></iframe>
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="./book.pdf" target="_blank" rel="noopener" style="color:#183a2d;">
+                لو الكتاب لم يظهر،اضغط هنا لفتح نسخة pdf
+            </a>">
+                تحميل نسخة PDF
+            </a>
+    </section>
+</main>
+
+<footer>
+    <span>بين الله والإنسان</span>
+    <p>رحلة لاكتشاف المعنى، وفهم الإنسان، وإعادة النظر في الأسئلة.</p>
+</footer>
+
+</body>
+</html>
